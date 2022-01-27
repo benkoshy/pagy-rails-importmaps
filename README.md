@@ -1,24 +1,40 @@
-# README
+### Problem statement
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* We have a few javascript files located in the `pagy` gem, located at: `Pagy.root.join('javascripts', 'pagy-module.js')`.
+* Using `importmap-rails` I would like to pin that particular file, so I can say something like:
 
-Things you may want to cover:
+```js
+// application.js
+import Pagy from "pagy"
+```
 
-* Ruby version
+Set up files:
 
-* System dependencies
+```ruby
+# importmap.rb
+pin "pagy", to: Pagy.root.join('javascripts', 'pagy-module.js')
+```
 
-* Configuration
+But, for some reason, it isn't working:
 
-* Database creation
+> ActionController::RoutingError (No route matches [GET] "/home/koshy/.rbenv/versions/3.0.1/lib/ruby/gems/3.0.0/gems/pagy-5.9.1/lib/javascripts/pagy-module.js"):
 
-* Database initialization
+and again, below:
 
-* How to run the test suite
+> GET http://localhost:3000/home/koshy/.rbenv/versions/3.0.1/lib/ruby/gems/3.0.0/gems/pagy-5.9.1/lib/javascripts/pagy-module.js net::ERR_ABORTED 404 (Not Found)
 
-* Services (job queues, cache servers, search engines, etc.)
+Was wanting to know if this is the expected behaviour?
 
-* Deployment instructions
 
-* ...
+### Instructions
+
+`bundle install`
+
+`rails s`
+
+
+
+
+
+
+
