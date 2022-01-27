@@ -1,5 +1,7 @@
 <p style="color: green"><%= notice %></p>
 <h1>Posts</h1>
+<p> Pagy</p>
+<%== pagy_nav(@pagy)  %>
 <div id="posts">
   <% @posts.each do |post| %>
     <%= render post %>
