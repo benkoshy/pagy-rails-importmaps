@@ -2,7 +2,13 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 
-import React from "react"
-import Pagy from "pagy"
+// import React from "react"
 
-console.log("hello world 1")
+// import Pagy from "pagy-module";
+import "pagy"
+
+
+
+
+window.addEventListener('turbo:load', Pagy.init);
+
